@@ -1,0 +1,22 @@
+#no-button{
+  background-color:  rgba(92, 91, 91, 0.658);
+  color: whitesmoke;
+  margin-right: 20px;
+  width: 100px;
+  margin-left: 40px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  height: 40px;
+  border: 0;
+}
+
+#yes-button{
+  background-color: rgba(255, 136, 0, 0.945);
+  color: whitesmoke;
+  float: right;
+  width: 100px;
+  margin-right: 60px;
+  border-radius: 5px;
+  height: 40px;
+  border: 0;
+}

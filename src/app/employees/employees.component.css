@@ -1,0 +1,9 @@
+.container{
+  margin: 0;
+}
+
+#title{
+  color: rgba(92, 91, 91, 0.76);
+  font-weight: bolder;
+
+}

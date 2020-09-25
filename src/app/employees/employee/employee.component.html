@@ -1,0 +1,40 @@
+<mat-toolbar>
+  <span>{{service.form.controls['$key'].value?"Update user":"Add user"}}</span>
+  <span class="fill-remaining-space"></span>
+  <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabIndex="-1"><mat-icon>clear</mat-icon></button>
+</mat-toolbar>
+<form [formGroup]="service.form" class="normal-form" (submit)="onSubmit()">
+
+  <mat-grid-list cols="1" rowHeight="300px">
+    <mat-grid-tile>
+      <div class="main-container">
+        <input type="hidden" formControlName="$key">
+        <mat-form-field>
+          <input formControlName="fullName" autocomplete="off" matInput placeholder="Name*">
+          <mat-error>This field is mandatory.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input formControlName="email" autocomplete="off" matInput placeholder="Email*">
+          <mat-error *ngIf="service.form.controls['email'].errors?.required">This field is mandatory.</mat-error>
+          <mat-error *ngIf="service.form.controls['email'].errors?.email">Invalid email address.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-select formControlName="department" placeholder="Role">
+            <mat-option>None</mat-option>
+            <ng-container *ngFor="let department of departmentService.array">
+              <mat-option value="{{department.$key}}">{{department.name}}</mat-option>
+            </ng-container>
+          </mat-select>
+        </mat-form-field>
+        <div class="button-row">
+          <button id="save-button" mat-raised-button  type="submit" [disabled]="service.form.invalid">Save</button>
+          <button id="cancel-button" mat-raised-button (click)="onClear()">Cancel</button>
+
+        </div>
+
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</form>

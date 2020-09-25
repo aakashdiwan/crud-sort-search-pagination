@@ -1,0 +1,31 @@
+
+.main-container{
+  width: 100%;
+  padding: 5%;
+}
+
+.main-container > * {
+  width: 100%;
+  }
+
+.button-row button{
+    margin: 5px;
+  }
+
+#cancel-button{
+  background-color:  rgba(92, 91, 91, 0.658);
+  color: whitesmoke;
+  float: right;
+  margin-right: 20px;
+}
+
+#save-button{
+  background-color: rgba(255, 136, 0, 0.945);
+  color: whitesmoke;
+  float: right;
+}
+
+::ng-deep .mat-select-value{
+  color: black;
+  text-align: left;
+}
